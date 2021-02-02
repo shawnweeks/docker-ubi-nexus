@@ -1,13 +1,12 @@
-# Nexus section
-# nexus-edition=nexus-pro-edition
-# nexus-features=\
-#  nexus-pro-feature
-
-# nexus.hazelcast.discovery.isEnabled=true
+nexus-edition={{ NEXUS_EDITION }}
+nexus-features={{ NEXUS_FEATURES }}
+nexus.licenseFile={{ NEXUS_LICENSE_FILE }}
 
 nexus-context-path={{ NEXUS_CONTEXT_PATH | default('/') }}
 
 {% if NEXUS_SSL_ENABLED is defined and NEXUS_SSL_ENABLED == 'true'%}
 nexus-args=${jetty.etc}/jetty.xml,${jetty.etc}/jetty-https.xml,${jetty.etc}/jetty-requestlog.xml
-application-port-ssl=8081
+application-port-ssl={{ NEXUS_PORT | default('8081') }}
+{% else %}
+application-port={{ NEXUS_PORT | default('8081') }}
 {% endif %}

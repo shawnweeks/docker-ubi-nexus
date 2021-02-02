@@ -48,3 +48,18 @@ docker run --init -it --rm \
     -e NEXUS_SSL_TRUSTSTORE_PASSWORD=changeit \
     ${REGISTRY}/sonatype/nexus3:${NEXUS_VERSION}
 ```
+
+### Environment Variables
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| NEXUS_PORT | | 8081 |
+| NEXUS_SSL_ENABLED | | None |
+| NEXUS_SSL_KEYSTORE | | None |
+| NEXUS_SSL_KEYSTORE_PASSWORD | | None |
+| NEXUS_SSL_KEYSTORE_TYPE | | jks |
+| NEXUS_SSL_Truststore | | None |
+| NEXUS_SSL_TRUSTSTORE_PASSWORD | | None |
+| NEXUS_SSL_TRUSTSTORE_TYPE | | jks |
+| NEXUS_EDITION | | None |
+| NEXUS_FEATURES | | None |
+| NEXUS_LICENSE_FILE | | None |

@@ -31,8 +31,10 @@
     <Set name="KeyStorePath">{{ NEXUS_SSL_KEYSTORE }}</Set>
     <Set name="KeyStorePassword">{{ NEXUS_SSL_KEYSTORE_PASSWORD }}</Set>
     <Set name="KeyManagerPassword">{{ NEXUS_SSL_KEYSTORE_PASSWORD }}</Set>
+    <Set name="KeyStoreType">{{ NEXUS_SSL_KEYSTORE_TYPE | default('jks') }}</Set> 
     <Set name="TrustStorePath">{{ NEXUS_SSL_TRUSTSTORE }}</Set>
     <Set name="TrustStorePassword">{{ NEXUS_SSL_TRUSTSTORE_PASSWORD }}</Set>
+    <Set name="TrustStoreType">{{ NEXUS_SSL_TRUSTSTORE_TYPE | default('jks') }}</Set> 
     <Set name="EndpointIdentificationAlgorithm"></Set>
     <Set name="NeedClientAuth"><Property name="jetty.ssl.needClientAuth" default="false"/></Set>
     <Set name="WantClientAuth"><Property name="jetty.ssl.wantClientAuth" default="false"/></Set>

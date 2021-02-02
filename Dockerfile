@@ -28,7 +28,7 @@ ENV NEXUS_DATA_DIR /var/lib/sonatype-work
 RUN yum install -y java-1.8.0-openjdk-devel procps git python2 python2-jinja2 && \
     yum clean all && \    
     mkdir -p ${NEXUS_HOME} && \
-    mkdir -p ${NEXUS_DATA_DIR} && \
+    mkdir -p ${NEXUS_DATA_DIR}\nexus3\etc && \    
     groupadd -r -g ${NEXUS_GID} ${NEXUS_GROUP} && \
     useradd -r -u ${NEXUS_UID} -g ${NEXUS_GROUP} -M -d ${NEXUS_HOME} ${NEXUS_USER} && \
     chown ${NEXUS_USER}:${NEXUS_GROUP} ${NEXUS_HOME} -R && \

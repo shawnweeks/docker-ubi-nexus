@@ -28,7 +28,7 @@ ENV NEXUS_DATA_DIR /var/lib/sonatype-work/nexus3
 RUN yum install -y java-1.8.0-openjdk-devel procps git python2 python2-jinja2 && \
     yum clean all && \    
     mkdir -p ${NEXUS_HOME} && \
-    mkdir -p ${NEXUS_DATA_DIR}\nexus3\etc && \    
+    mkdir -p ${NEXUS_DATA_DIR}/etc && \    
     groupadd -r -g ${NEXUS_GID} ${NEXUS_GROUP} && \
     useradd -r -u ${NEXUS_UID} -g ${NEXUS_GROUP} -M -d ${NEXUS_HOME} ${NEXUS_USER} && \
     chown ${NEXUS_USER}:${NEXUS_GROUP} ${NEXUS_HOME} -R && \
@@ -36,7 +36,7 @@ RUN yum install -y java-1.8.0-openjdk-devel procps git python2 python2-jinja2 &&
 
 COPY [ "templates/*.j2", "/opt/jinja-templates/" ]
 COPY --from=build --chown=${NEXUS_USER}:${NEXUS_GROUP} [ "/tmp/nexus_package", "${NEXUS_HOME}/" ]
-COPY --from=build --chown=${NEXUS_USER}:${NEXUS_GROUP} [ "/tmp/nexus3", "${NEXUS_DATA_DIR}/nexus3" ]
+COPY --from=build --chown=${NEXUS_USER}:${NEXUS_GROUP} [ "/tmp/nexus3", "${NEXUS_DATA_DIR}" ]
 COPY --chown=${NEXUS_USER}:${NEXUS_GROUP} [ "entrypoint.sh", "entrypoint.py", "entrypoint_helpers.py", "${NEXUS_HOME}/" ]
 
 COPY [ "templates/*.j2", "/opt/jinja-templates/" ]

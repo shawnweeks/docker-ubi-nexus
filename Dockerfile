@@ -22,7 +22,7 @@ ENV NEXUS_UID 2001
 ENV NEXUS_GID 2001
 
 ENV NEXUS_HOME /opt/nexus3
-ENV NEXUS_DATA_DIR /var/lib/sonatype-work
+ENV NEXUS_DATA_DIR /var/lib/sonatype-work/nexus3
 
 
 RUN yum install -y java-1.8.0-openjdk-devel procps git python2 python2-jinja2 && \

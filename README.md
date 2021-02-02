@@ -57,9 +57,11 @@ docker run --init -it --rm \
 | NEXUS_SSL_KEYSTORE | | None |
 | NEXUS_SSL_KEYSTORE_PASSWORD | | None |
 | NEXUS_SSL_KEYSTORE_TYPE | | jks |
-| NEXUS_SSL_Truststore | | None |
+| NEXUS_SSL_TRUSTSTORE | | None |
 | NEXUS_SSL_TRUSTSTORE_PASSWORD | | None |
 | NEXUS_SSL_TRUSTSTORE_TYPE | | jks |
 | NEXUS_EDITION | | None |
 | NEXUS_FEATURES | | None |
 | NEXUS_LICENSE_FILE | | None |
+| NEXUS_MIN_MEMORY | | None |
+| NEXUS_MAX_MEMORY | | None |

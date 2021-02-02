@@ -65,3 +65,4 @@ docker run --init -it --rm \
 | NEXUS_LICENSE_FILE | | None |
 | NEXUS_MIN_MEMORY | | None |
 | NEXUS_MAX_MEMORY | | None |
+| NEXUS_CONTEXT_PATH | | None |

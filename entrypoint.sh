@@ -3,6 +3,8 @@
 set -e
 umask 0027
 
+export INSTALL4J_ADD_VM_PARAMS=-XX:ActiveProcessorCount=${NEXUS_CPU_COUNT:-4}
+
 entrypoint.py
 
 unset "${!NEXUS_@}"

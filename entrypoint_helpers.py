@@ -12,7 +12,7 @@ jenv = j2.Environment(
     keep_trailing_newline=True)
 
 def gen_cfg(tmpl, target):
-    print "Generating {} from template {}".format(target, tmpl)
+    print("Generating {} from template {}".format(target, tmpl))
     cfg = jenv.get_template(tmpl).render(env)
     with open(target, 'w') as fd:
         fd.write(cfg)
@@ -26,7 +26,7 @@ def set_props(props, target):
     tmpInput = input.splitlines()
     output = []
     for k, v in props.items():
-        print "Setting {}={} in {}".format(k, v, target)
+        print("Setting {}={} in {}".format(k, v, target))
         key_found = False
         if output:
             tmpInput = output

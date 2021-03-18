@@ -1,12 +1,11 @@
 ### Download
 ```shell
-export NEXUS_VERSION=3.29.2-02
+export NEXUS_VERSION=3.30.0-01
 wget https://download.sonatype.com/nexus/3/nexus-${NEXUS_VERSION}-unix.tar.gz
 ```
 
 ### Build Command
 ```shell
-export NEXUS_VERSION=3.29.2-02
 docker build \
     -t ${REGISTRY}/sonatype/nexus3:${NEXUS_VERSION} \
     --build-arg BASE_REGISTRY=${REGISTRY} \
@@ -21,17 +20,16 @@ docker push ${REGISTRY}/sonatype/nexus3
 
 ### Simple Run Command
 ```shell
-export NEXUS_VERSION=3.29.2-02
 docker run --init -it --rm \
     --name nexus  \
     -v nexus-data:/var/lib/sonatype-work/nexus3 \
+    -v nexus-logs:/var/lib/sonatype-work/nexus3/log \
     -p 8081:8081 \
     ${REGISTRY}/sonatype/nexus3:${NEXUS_VERSION}
 ```
 
 ### Simple SSL Run Command
 ```shell
-export NEXUS_VERSION=3.29.2-02
 keytool -genkey -noprompt -keyalg RSA \
         -alias selfsigned -keystore keystore.jks -storepass changeit \
         -dname "CN=localhost" \
